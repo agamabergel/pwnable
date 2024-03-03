@@ -1,6 +1,6 @@
 # Grotesque Rootkit Writeup :)
 
-## first change kernel moudle signture using sed, 'rootkit' signture already loaded:
+## [+] first change kernel moudle signture using sed, 'rootkit' signture already loaded:
 
 	$ sed -i 's/rootkit/rootkik/g' rootkit.ko
 
