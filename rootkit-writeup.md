@@ -4,8 +4,27 @@
 
 	$ sed -i 's/rootkit/rootkik/g' rootkit.ko
 
+## [+] on IDA in initmoudle func, I found the hook:
+	mov     eax, ds:0C15FA034h  <-
+	mov     ebp, esp
+	mov     ds:sct, 0C15FA020h
+	mov     ds:sys_open, eax    <- 
+	mov     eax, ds:0C1158DB0h 
+	mov     ds:sys_openat, eax
+	mov     eax, ds:0C15FA16Ch
+	mov     ds:sys_symlink, eax
+	mov     eax, ds:0C15FA4E0h
+	mov     ds:sys_symlinkat, eax
+	mov     eax, ds:0C15FA044h
+	mov     ds:sys_link, eax
+	mov     eax, ds:0C15FA4DCh
+	mov     ds:sys_linkat, eax
+	mov     eax, ds:0C15FA0B8h
+	mov     ds:sys_rename, eax
+	mov     eax, ds:0C15FA4D8h
+	mov     ds:sys_renameat, eax
 
-## [+] replace the syscall hook for sys_open using sed by changing the instraction so the address wont be relative to ds:
+## [+] replace the syscall hook for sys_open (thats what needed for cat command, used strace to check) using sed by changing the instraction so the address in ax won't be relative to ds:
 
 
 	 syscall hooked func address -> sys_open = MEMORY[0xC15FA034];
