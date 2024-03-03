@@ -10,7 +10,7 @@
 
 	 syscall hooked func address -> sys_open = MEMORY[0xC15FA034];
 
-## [+] instraction in x86 asm:
+## [+] hooked instraction in x86 asm:
 
 	In [12]: asm("mov eax, ds:0xC15FA034")
 	Out[12]: b'\xa14\xa0_\xc1' -> '\xc1\x5f\xa0\x34\xa1' -> '\xa1\x34\xa0\x5f\xc1'
@@ -23,7 +23,7 @@
 	-> c1158d70 T sys_open <-
 	   c1158db0 T sys_openat
 
-## [+] original sys_open func address -> 0xc1158d70, therefore:
+## [+] original sys_open func address -> 0xc1158d70, therefore we want:
 
 	In [13]: asm("mov eax, 0xc1158d70")
 	Out[13]: b'\xb8p\x8d\x15\xc1' -> '\xc1\x15\x8d\x70\xb8' -> '\xb8\x70\x8d\x15\xc1'
