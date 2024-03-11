@@ -1,4 +1,4 @@
-# syscall writeup by agam
+# syscall writeup by agam ^_^
 
 ### In the given syscall.c code, we can see that they add a new syscall named sys_upper to the syscall_table. This syscall essentially converts any string of lowercase to uppercase.
 
