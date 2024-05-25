@@ -153,7 +153,7 @@
 								3ś~l��1-R�Kߩ���u�c2�DM��8ݺ�����9��)������Kyk���rͳ�J���t��nX�C�M(/ # 
 
 
-###  		  oh mam wtf is this -_-
+###  		  oh man wtf is this -_-
 
 ## [+] the list of commands in busybox doesnt,include binwalk or something likethat, so i checked the file firsts bytes to search the signture:
 	$ hexdump -C flag
@@ -182,7 +182,7 @@
 	flag0000644000000000000000000000003212353176126010411 0ustar  rootrootRootkitty Sweety Kitty :)
 
 # therefore, the final flag is: 
-	Rootkitty Sweety Kitty :)
+### Rootkitty Sweety Kitty :)
 
 
 
